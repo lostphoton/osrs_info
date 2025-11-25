@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osrs_info"
+version = "0.1.0"
+description = "Lightweight OSRS hiscores + GE price decoder."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Collin Dillon" }
+]
+keywords = ["osrs", "old school runescape", "hiscores", "prices", "runescape"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Topic :: Games/Entertainment",
+  "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+  "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+fuzzy = [
+  "rapidfuzz>=3.6.0",
+]
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.5.0",
+  "build>=1.2.0",
+  "twine>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/<your-user>/<your-repo>"
+Issues = "https://github.com/<your-user>/<your-repo>/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["osrs_info*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
